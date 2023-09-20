@@ -3,59 +3,71 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './Card.css';
 
-function Card({item, setCart}) {
-  const [imageURL, setImageURL] = useState("")
-    
+function Card({item, setCart, cart}) {
+  const [imageURL, setImageURL] = useState("");
+  const [disabled, setDisabled] = useState(false);
+
   useEffect(() => {
     import(`../assets/images/${item._id}.jpg`).then((module) => {
       setImageURL(module.default);
     });
-  })
+  }, [item._id]); // Add item._id as a dependency to refresh the image when item changes
 
   function addToCart() {
-    setCart((prevCart) => {
-     let existingItemIndex = prevCart.findIndex(i => i._id === item._id);
-     if (existingItemIndex !== -1) {
-      // Save existing item
-      let existingItem = prevCart.find(i => i._id === item._id);
-      // Filter prevCart, without the existing item
-      let newCart = prevCart.filter(i => i._id !== item._id);
-      // Return new Array with updated existing item
-      return [...newCart, {...existingItem, quantity: existingItem.quantity + 1}]
-     } else {
-      return [...prevCart, {...item, quantity: 1}]
-     } 
-    })
+    if (!disabled) {
+      setCart((prevCart) => {
+        const existingItemIndex = prevCart.findIndex(i => i._id === item._id);
 
-    toast.success('🤤 Added to cart!', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+        if (existingItemIndex !== -1) {
+          // Item is already in the cart
+          toast.warning('Item is already in the cart.', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          return prevCart;
+        } else {
+          // Item is not in the cart
+          toast.success('🤤 Booking the table for you!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          return [...prevCart, { ...item, quantity: 1 }];
+        }
+      });
+
+      // Disable the button after adding the item
+      setDisabled(true);
+    }
   }
 
   return (
     <div className="Card">
       <div className="Card-inner">
         <div className="Card-inner-left">
-          <img src={imageURL} alt={item.name}/>
+          <img src={imageURL} alt={item.name} />
         </div>
         <div className="Card-inner-right">
           <div>
             <div className="title">{item.name}</div>
-            <div className="desc">This will be the item description.</div>
+            <div className="desc">Savor the flavors!</div>
           </div>
           <div>
             <div className="price">Rs. {item.price}</div>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={addToCart} disabled={disabled}>Book now</button>
           </div>
-        </div>  
+        </div>
       </div>
-      <ToastContainer />  
+      <ToastContainer />
     </div>
   );
 }

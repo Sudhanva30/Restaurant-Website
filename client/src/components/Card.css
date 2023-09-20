@@ -13,7 +13,7 @@
   width: 98%;
   height: 96%;
   border-radius: 10px;
-  background-color: rgb(198, 190, 238, 0.3);
+  background-color: rgba(155, 92, 37, 0.3);
   padding: 10px;
   gap: 10px 10px;
 }
@@ -56,7 +56,7 @@
 
 .Card-inner-right > div > .price {
   text-align: center;
-  background-color: #E7A4D0;
+  background-color: #d4a28b;
   padding: 5px;
   width: 60px;
   border-radius: 5px;
@@ -68,7 +68,7 @@
 	font-weight: 600;
   height: 30px;
   width: 100px;
-	background-color: #00886B;
+	background-color: #d1221f;
 	border-radius: 5px;
   border: none;
 	cursor: pointer;
@@ -77,4 +77,10 @@
 .Card-inner-right > div > button:hover {
 	transform: translateY(-3px);
 	transition: all 0.5s cubic-bezier(.165,.84,.44,1);
+}
+
+.Card-inner-right > div > button:disabled {
+  background-color: #ccc; /* You can keep it the same as the disabled background color */
+  color: #666; /* You can keep it the same as the disabled text color */
+  /* You can add more hover styles if needed */
 }

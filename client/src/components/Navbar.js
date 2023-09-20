@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import './Navbar.css'
 
+
 export default function Navbar(props) {
 
 	function logout() {
@@ -12,7 +13,7 @@ export default function Navbar(props) {
 	return (
 		<header>
 			<div className="logo">
-				<Link to="/">PaitPooja</Link>
+				<Link to="/">INDIAN FUSION BITES</Link>
 			</div>
 			{ !props.isLoggedIn?
 				<ul>
@@ -24,7 +25,7 @@ export default function Navbar(props) {
 				</ul> 
 				:
 				<ul>
-					<li><Link to="/">Welcome Mubashir!</Link></li>
+					<li><Link to="/">Savor the Flavors of Fusion.</Link></li>
 					<li><button onClick={logout}>Logout</button></li>
 					<li className="cart"><ShoppingCartCheckoutIcon /> [{props.numItems}] 
 						<Link to="/checkout">Checkout</Link>

@@ -57,13 +57,16 @@ export default function SignUp(props) {
 			_error = "Passwords don't match"
 		} else if (formData.password.length < 8) {
 			_error = "Password must be atleast 8 characters long"
-		} else if (formData.mobileNumber.length !== 11) {
-			_error = "Invalid mobile number"
-		} else if (!/^[0-9]+$/.test(formData.mobileNumber)) {
-			_error = 'Invalid mobile number'
-		} else if (formData.mobileNumber[0] !== '0' || formData.mobileNumber[1] !== '3') {
-			_error = 'Invalid mobile number'
-		}
+		} 
+		// else if (formData.mobileNumber.length !== 11) {
+		// 	_error = "Invalid mobile number"
+		// } else if (!/^[0-9]+$/.test(formData.mobileNumber)) {
+		// 	_error = 'Invalid mobile number'
+		// } else if (formData.mobileNumber[0] !== '0' || formData.mobileNumber[1] !== '3') {
+		// 	_error = 'Invalid mobile number'
+		// }
+
+		console.log(_error)
 
 		setError(_error)
 		if (_error === "") {

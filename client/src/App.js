@@ -5,6 +5,8 @@ import CardLists from './components/CardList';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Checkout from './components/CheckOut';
+import Gallery from './components/Gallery';
+import RestaurantMap from './components/RestaurantMap';
 
 import {
 	Route,
@@ -34,13 +36,15 @@ export default function App(){
 			<Navbar numItems={cart.length} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 			<div className="App-body">
 				<Routes>
-					<Route exact path="/" element={<CardLists setCart={setCart}/>} />
+					<Route exact path="/" element={<CardLists cart={cart} setCart={setCart}/>} />
 					<Route exact path="/checkout" element={<Checkout cart={cart} setCart={setCart} isLoggedIn={isLoggedIn} grandTotal={grandTotal} />} />
 					<Route path="*" element={ <PageNotFound />}/>
 					<Route exact path="/login" element={ <Login setIsLoggedIn={setIsLoggedIn} /> } />
 					<Route exact path="/sign-up" element={ <SignUp setIsLoggedIn={setIsLoggedIn} />} />
 				</Routes>
 			</div>
+			<Gallery/>
+			<RestaurantMap/>
 			<Footer />
 		</div>
   	);

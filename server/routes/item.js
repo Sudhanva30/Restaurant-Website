@@ -4,6 +4,6 @@ const router = express.Router();
 const {getItems, postItems} = require('../controllers/item');
 
 router.route("/get").get(getItems);
-// router.route("/post").post(postItems);
+router.route("/post").post(postItems);
 
 module.exports = router;

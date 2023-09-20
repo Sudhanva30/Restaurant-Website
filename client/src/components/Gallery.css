@@ -1,0 +1,39 @@
+/* Gallery container */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  /* Gallery images */
+  .gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .gallery-images img {
+    max-width: 100px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .gallery-images img:hover {
+    border-color: #007BFF; /* Change border color on hover */
+  }
+  
+  /* Current image display */
+  .current-image img {
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .gallery h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgb(105, 14, 14);
+  }

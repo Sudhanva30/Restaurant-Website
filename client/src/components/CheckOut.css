@@ -7,7 +7,7 @@
 
 .Invoice > h4,h3 {
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(198, 190, 238, 0.9);
+  border-bottom: 1px solid rgba(237, 163, 131, 0.9);
 }
 .Invoice > .details {
   width: 100%;
@@ -41,5 +41,5 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 6px;
-  border-bottom: 1px solid rgba(198, 190, 238, 0.502);
+  border-bottom: 1px solid rgba(237, 163, 131, 0.9);
 }

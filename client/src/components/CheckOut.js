@@ -91,7 +91,7 @@ export default function Checkout({cart, setCart, isLoggedIn, grandTotal}) {
       </div>
       <div className="r2">
         <span>{ item.quantity }{ " "}</span>
-        <span>This is the description</span>
+        <span>You are booking {item.name}</span>
       </div>
       <div className="r3">
         <RemoveCircleIcon style={{cursor: "pointer"}} onClick={() => decrementCart(item)} />
@@ -134,10 +134,9 @@ export default function Checkout({cart, setCart, isLoggedIn, grandTotal}) {
             value={formData.specialInstructions}
             onChange={handleChange}
             autoComplete="true"
-            placeholder="Add any comments, e.g., No ketchup, Add more cheese"
+            placeholder="Add any comments,"
           />
-          <input type="text" value="Payment Method: Cash" disabled />
-          <input type="text" value="Delivery Type: Pick Up/Takeaway" disabled />
+          <input type="text" value="Payment Method: Cash/Card/UPI" disabled />
           <button onClick={placeOrder}>Checkout</button>
         </form>
       </div>

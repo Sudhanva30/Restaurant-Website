@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpait_pooja=self.webpackChunkpait_pooja||[]).push([[569],{569:function(a,p,e){a.exports=e.p+"static/media/veg menu.0d6fb1b86277b00ba8ba.jpg"}}]);

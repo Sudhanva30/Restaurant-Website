@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpait_pooja=self.webpackChunkpait_pooja||[]).push([[509],{509:function(a,e,p){a.exports=p.p+"static/media/62d6c0dee3256bb36426ae61.4a2b64e96dc5a9b21f93.jpg"}}]);

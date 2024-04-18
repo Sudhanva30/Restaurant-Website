@@ -2,6 +2,9 @@ import { useState, useEffect, memo } from "react";
 import Card from "./Card";
 
 import './CardList.css'
+import Gallery from './Gallery';
+import RestaurantMap from './RestaurantMap';
+import Menu from './Menu';
 
 function CardList({items, cart, setCart}) {
   const itemsCard = items.map((item) => <Card key={item._id} item={item} setCart={setCart} cart = {cart}/>)
@@ -12,6 +15,9 @@ function CardList({items, cart, setCart}) {
         {items[0] ? items[0].category : "Category"}
       </div>
       <div className="CardList-body">{itemsCard}</div>
+      <Menu/>
+			<Gallery/>
+			<RestaurantMap/>
       {/* <div className="menu-body">
         <h1>Menu</h1>
           <h3>Starters</h3>

@@ -7,6 +7,7 @@ import SignUp from './components/SignUp';
 import Checkout from './components/CheckOut';
 import Gallery from './components/Gallery';
 import RestaurantMap from './components/RestaurantMap';
+import Menu from './components/Menu';
 
 import {
 	Route,
@@ -43,6 +44,7 @@ export default function App(){
 					<Route exact path="/sign-up" element={ <SignUp setIsLoggedIn={setIsLoggedIn} />} />
 				</Routes>
 			</div>
+			<Menu/>
 			<Gallery/>
 			<RestaurantMap/>
 			<Footer />

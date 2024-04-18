@@ -1,5 +1,5 @@
 import React from 'react';
-import Menupic from '../assets/images/veg menu.jpg'; // Replace with the actual path to your menu.jpg image
+import Menupic from '../assets/images/veg menu.png'; 
 import './Menu.css'; // Import the CSS file
 
 

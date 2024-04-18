@@ -10,7 +10,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* This centers the component vertically in the viewport */
+    height: 50vh; /* This centers the component vertically in the viewport */
   }
   
   .div h2 {

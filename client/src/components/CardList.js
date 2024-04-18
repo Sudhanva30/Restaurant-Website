@@ -12,7 +12,7 @@ function CardList({items, cart, setCart}) {
         {items[0] ? items[0].category : "Category"}
       </div>
       <div className="CardList-body">{itemsCard}</div>
-      <div className="menu-body">
+      {/* <div className="menu-body">
         <h1>Menu</h1>
           <h3>Starters</h3>
           <ul className="starter-list">
@@ -59,7 +59,7 @@ function CardList({items, cart, setCart}) {
             <li>Coconut Ladoo</li>
             <li>Ice Cream-Vanilla,Strawberry,Chocolate</li>
           </ul>
-      </div>
+      </div> */}
     </div>
   )
 }
